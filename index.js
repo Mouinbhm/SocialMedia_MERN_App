@@ -7,6 +7,10 @@ app.get("/", (req, res) => {
   res.send("Welcome to the home page!");
 });
 
+
+const userRoutes = require('./Routes/user.router')
+app.use('/users', userRoutes);
+
 mongoose.connect(process.env.CONNECTION_STRING, {
   useNewUrlParser: true,
   useUnifiedTopology: true,

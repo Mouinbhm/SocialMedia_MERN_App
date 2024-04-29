@@ -4,7 +4,7 @@ var userSchema = new mongoose.Schema({
   lastname: String,
   email: String,
   password: String,
-  date_of_birth: Date,
+  birthday: Date,
   role: {
     type: String,
     enum: ["admin", "user"],

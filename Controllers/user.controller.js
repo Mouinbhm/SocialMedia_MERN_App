@@ -1,4 +1,5 @@
-const User = required("../Models/user.model");
+const User = require("../Models/user.model");
+
 exports.signup = (req, res) => {
   const data = {
     firstname: "ahmed",
@@ -9,7 +10,7 @@ exports.signup = (req, res) => {
     picture: "",
     birthday: new Date(),
   };
-  const_user = new User(data);
+  const _user = new User(data); 
   _user
     .save()
     .then((createdUser) => {
