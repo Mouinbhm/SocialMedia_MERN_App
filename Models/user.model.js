@@ -4,7 +4,7 @@ var userSchema = new mongoose.Schema({
   lastname: String,
   email: String,
   password: String,
-  birthday: Date,
+  date_of_birth: Date,
   role: {
     type: String,
     enum: ["admin", "user"],
@@ -14,4 +14,4 @@ var userSchema = new mongoose.Schema({
   picture: String,
 });
 
-module.exports = mongoose.model("users", userSchema);
+module.export = mongoose.model("users", userSchema);

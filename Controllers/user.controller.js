@@ -2,15 +2,15 @@ const User = require("../Models/user.model");
 
 exports.signup = (req, res) => {
   const data = {
-    firstname: "ahmed",
-    lastname: "ben ahmed",
-    email: "ahmed@gmail.com",
-    password: "123456",
-    bio: "",
-    picture: "",
-    birthday: new Date(),
+    firstname: req.body.firstname,
+    lastname: req.body.lastname,
+    email: req.body.email,
+    password: req.body.password,
+    bio: req.body.bio,
+    picture: req.body.picture,
+    birthday: req.body.birthday,
   };
-  const _user = new User(data); 
+  const _user = new User(data);
   _user
     .save()
     .then((createdUser) => {
