@@ -7,7 +7,7 @@ app.get("/", (req, res) => {
   res.send("Welcome to the home page!");
 });
 
-mongoose.connect("mongodb://localhost:27017/SocialMediaApp", {
+mongoose.connect(process.env.CONNECTION_STRING, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
