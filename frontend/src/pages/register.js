@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Register = () => {
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [bio, setBio] = useState("");
+  const [birthdate, setBirthdate] = useState("");
+  const [picture, setPicture] = useState("");
+
   return (
     <div className="register">
       <div className="register-cover"></div>
@@ -13,31 +21,60 @@ const Register = () => {
 
         <form>
           <div className="form-group">
-            <input type="text" placeholder="First Name" />
+            <input
+              type="text"
+              value={firstname}
+              onChange={(e) => setFirstname(e.target.value)}
+              placeholder="First Name"
+            />
           </div>
 
           <div className="form-group">
-            <input type="text" placeholder="Last Name" />
+            <input
+              type="text"
+              value={lastname}
+              onChange={(e) => setLastname(e.target.value)}
+              placeholder="Last Name"
+            />
           </div>
 
           <div className="form-group">
-            <input type="email" placeholder="E-Mail" />
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="E-Mail"
+            />
           </div>
 
           <div className="form-group">
-            <input type="password" placeholder="Password" />
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Password"
+            />
           </div>
 
           <div className="form-group">
-            <textarea placeholder="Tell us about yourself"></textarea>
+            <textarea
+              value={bio}
+              onChange={(e) => setBio(e.target.value)}
+              placeholder="Tell us about yourself"
+            ></textarea>
           </div>
 
           <div className="form-group">
-            <input type="file" accept="image/*" />
+            <input type="file" />
           </div>
 
           <div className="form-group">
-            <input type="date" placeholder="Birthdate" />
+            <input
+              type="date"
+              value={birthdate}
+              onChange={(e) => setBirthdate(e.target.value)}
+              placeholder="Birthdate"
+            />
           </div>
 
           <button className="btn signup"> Sign Up </button>
