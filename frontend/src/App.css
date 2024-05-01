@@ -1,38 +1,87 @@
-.App {
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f2f2f2;
+}
+
+.register {
+  margin: 10vh auto;
+  width: 80vw;
+  height: 80vh;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+}
+
+.register-cover {
+  background-image: url(../public/registerimg.jpg);
+  background-size: cover;
+  width: 50%;
+  height: 100%;
+}
+
+.register-content {
+  width: 50%;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  padding: 1.5rem; /* Ajustement de la taille du padding */
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.register-content h1 {
+  color: #333;
+  font-size: 2rem; /* Réduction de la taille de la police */
+  margin-bottom: 1rem; /* Réduction de la marge inférieure */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.register-content p {
+  color: #666;
+  font-size: 1rem; /* Réduction de la taille de la police */
+  margin-bottom: 1.5rem; /* Réduction de la marge inférieure */
+}
+
+.form-group {
+  margin-bottom: 1rem; /* Réduction de la marge inférieure */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+input[type="date"] {
+  width: 100%;
+  padding: 0.5rem; /* Réduction de la taille du padding */
+  font-size: 0.9rem; /* Réduction de la taille de la police */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="file"] {
+  font-size: 0.9rem; /* Réduction de la taille de la police */
+  border: none;
+}
+
+button.signup {
+  padding: 0.6rem 1.5rem; /* Réduction de la taille du padding */
+  font-size: 0.9rem; /* Réduction de la taille de la police */
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.signup:hover {
+  background-color: #0056b3;
 }

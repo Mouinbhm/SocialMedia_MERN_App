@@ -1,6 +1,7 @@
 import "./App.css";
 
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Register from "./pages/register.js";
 
 function App() {
   const router = createBrowserRouter([
@@ -18,11 +19,7 @@ function App() {
     },
     {
       path: "/register",
-      element: (
-        <div>
-          <h1>hello register page</h1>
-        </div>
-      ),
+      element: <Register />,
     },
   ]);
   return (
