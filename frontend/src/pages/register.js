@@ -10,19 +10,39 @@ const Register = () => {
   const [bio, setBio] = useState("");
   const [birthdate, setBirthdate] = useState("");
   const [picture, setPicture] = useState("");
+  const [errors, setErrors] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    bio: "",
+    birthdate: "",
+  });
+
+  const formValidation = () => {
+    let localErrors = { ...errors };
+
+    if (!firstname) {
+      localErrors.firstName = "Firstname is required";
+    }
+    if (!lastname) {
+      localErrors.lastName = "Lastname is required";
+    }
+    if (!email) {
+      localErrors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
+      localErrors.email = "Invalid email format";
+    }
+    if (!password || password.length < 8) {
+      localErrors.password = "Password is required (min 8 characters)";
+    }
+    setErrors(localErrors);
+    return Object.values(localErrors).every((error) => error === "");
+  };
 
   const register = async (e) => {
     e.preventDefault();
-    console.log("form submited");
-    console.log(
-      "form data",
-      firstname,
-      lastname,
-      email,
-      password,
-      bio,
-      birthdate
-    );
+    if (!formValidation()) return;
 
     const data = {
       firstname: firstname,
@@ -46,7 +66,7 @@ const Register = () => {
       setBio("");
     } catch (err) {
       console.log(err);
-      toast.error("failed while signup!");
+      toast.error("Failed while signing up!");
     }
   };
 
@@ -69,6 +89,7 @@ const Register = () => {
               onChange={(e) => setFirstname(e.target.value)}
               placeholder="First Name"
             />
+            <div className="error">{errors.firstName}</div>
           </div>
 
           <div className="form-group">
@@ -78,6 +99,7 @@ const Register = () => {
               onChange={(e) => setLastname(e.target.value)}
               placeholder="Last Name"
             />
+            <div className="error">{errors.lastName}</div>
           </div>
 
           <div className="form-group">
@@ -87,6 +109,7 @@ const Register = () => {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="E-Mail"
             />
+            <div className="error">{errors.email}</div>
           </div>
 
           <div className="form-group">
@@ -96,6 +119,7 @@ const Register = () => {
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Password"
             />
+            <div className="error">{errors.password}</div>
           </div>
 
           <div className="form-group">
@@ -104,11 +128,10 @@ const Register = () => {
               onChange={(e) => setBio(e.target.value)}
               placeholder="Tell us about yourself"
             ></textarea>
+            <div className="error">{errors.bio}</div>
           </div>
 
-          <div className="form-group">
-            <input type="file" />
-          </div>
+         
 
           <div className="form-group">
             <input
@@ -117,11 +140,11 @@ const Register = () => {
               onChange={(e) => setBirthdate(e.target.value)}
               placeholder="Birthdate"
             />
+            <div className="error">{errors.birthdate}</div>
           </div>
 
           <button className="btn signup" type="submit">
-            {" "}
-            Sign Up{" "}
+            Sign Up
           </button>
         </form>
       </div>
