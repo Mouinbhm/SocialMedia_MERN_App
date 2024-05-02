@@ -7,7 +7,7 @@ body {
   width: 100%;
   padding: 0;
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: #f2f2f2;
 }
 
@@ -36,18 +36,18 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: calc(100% - 2rem);
 }
 
 .register-content h1 {
   color: #333;
-  font-size: 2rem; /* Réduction de la taille de la police */
+  font-size: 2.5rem; /* Réduction de la taille de la police */
   margin-bottom: 1rem; /* Réduction de la marge inférieure */
 }
 
 .register-content p {
   color: #666;
-  font-size: 1rem; /* Réduction de la taille de la police */
-  margin-bottom: 1.5rem; /* Réduction de la marge inférieure */
+  font-size: 1rem;
 }
 
 .form-group {
@@ -59,16 +59,19 @@ input[type="email"],
 input[type="password"],
 textarea,
 input[type="date"] {
-  width: 100%;
+  width: 150%;
   padding: 0.5rem; /* Réduction de la taille du padding */
-  font-size: 0.9rem; /* Réduction de la taille de la police */
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  font-size: 1rem; /* Réduction de la taille de la police */
+  border: 1px solid #433e3e;
+  border-radius: 10px;
+  margin: auto; /* Centrer horizontalement */
 }
 
 input[type="file"] {
   font-size: 0.9rem; /* Réduction de la taille de la police */
   border: none;
+  align-items: center;
+  display: flex;
 }
 
 button.signup {
@@ -84,4 +87,20 @@ button.signup {
 
 button.signup:hover {
   background-color: #0056b3;
+}
+
+.error {
+  color: #fe7621;
+  font-size: 0.9rem;
+  margin-top: 0.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.error-icon {
+  margin-right: 0.5rem;
+}
+
+.error-text {
+  font-weight: bold;
 }
