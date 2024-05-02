@@ -9,6 +9,20 @@ const Register = () => {
   const [birthdate, setBirthdate] = useState("");
   const [picture, setPicture] = useState("");
 
+  const register = (e) => {
+    e.preventDefault();
+    console.log("form submited");
+    console.log(
+      "form data",
+      firstname,
+      lastname,
+      email,
+      password,
+      bio,
+      birthdate
+    );
+  };
+
   return (
     <div className="register">
       <div className="register-cover"></div>
@@ -19,7 +33,7 @@ const Register = () => {
           <p>Welcome to Let's Talk Social Media Platform</p>
         </div>
 
-        <form>
+        <form onSubmit={register}>
           <div className="form-group">
             <input
               type="text"
@@ -77,7 +91,10 @@ const Register = () => {
             />
           </div>
 
-          <button className="btn signup"> Sign Up </button>
+          <button className="btn signup" type="submit">
+            {" "}
+            Sign Up{" "}
+          </button>
         </form>
       </div>
     </div>
