@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import UserService from "../services/user.service";
+import toast, { Toaster } from "react-hot-toast";
 
 const Register = () => {
   const [firstname, setFirstname] = useState("");
@@ -9,7 +11,7 @@ const Register = () => {
   const [birthdate, setBirthdate] = useState("");
   const [picture, setPicture] = useState("");
 
-  const register = (e) => {
+  const register = async (e) => {
     e.preventDefault();
     console.log("form submited");
     console.log(
@@ -21,10 +23,36 @@ const Register = () => {
       bio,
       birthdate
     );
+
+    const data = {
+      firstname: firstname,
+      lastname: lastname,
+      email: email,
+      password: password,
+      bio: bio,
+      birthdate: birthdate,
+      picture: picture,
+    };
+
+    try {
+      const response = await UserService.register(data);
+      console.log("response ===> ", response);
+      toast.success("User created successfully!");
+      setFirstname("");
+      setLastname("");
+      setEmail("");
+      setPassword("");
+      setBirthdate("");
+      setBio("");
+    } catch (err) {
+      console.log(err);
+      toast.error("failed while signup!");
+    }
   };
 
   return (
     <div className="register">
+      <Toaster />
       <div className="register-cover"></div>
 
       <div className="register-content">
