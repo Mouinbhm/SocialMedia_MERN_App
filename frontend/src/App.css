@@ -11,7 +11,8 @@ body {
   background-color: #f2f2f2;
 }
 
-.register {
+.register,
+.login {
   margin: 10vh auto;
   width: 80vw;
   height: 80vh;
@@ -21,17 +22,19 @@ body {
   display: flex;
 }
 
-.register-cover {
+.register-cover,
+.login-cover {
   background-image: url(../public/registerimg.jpg);
   background-size: cover;
   width: 50%;
   height: 100%;
 }
 
-.register-content {
+.register-content,
+.login-content {
   width: 50%;
   text-align: center;
-  padding: 1.5rem; /* Ajustement de la taille du padding */
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -39,19 +42,22 @@ body {
   height: calc(100% - 2rem);
 }
 
-.register-content h1 {
+.register-content h1,
+.login-content h1 {
   color: #333;
-  font-size: 2.5rem; /* Réduction de la taille de la police */
-  margin-bottom: 1rem; /* Réduction de la marge inférieure */
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
-.register-content p {
+.register-content p,
+.login-content p {
   color: #666;
   font-size: 1rem;
+  margin-top: 0; /* Suppression de la marge supérieure */
 }
 
 .form-group {
-  margin-bottom: 1rem; /* Réduction de la marge inférieure */
+  margin-bottom: 0rem;
 }
 
 input[type="text"],
@@ -59,24 +65,24 @@ input[type="email"],
 input[type="password"],
 textarea,
 input[type="date"] {
-  width: 150%;
-  padding: 0.5rem; /* Réduction de la taille du padding */
-  font-size: 1rem; /* Réduction de la taille de la police */
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
   border: 1px solid #433e3e;
   border-radius: 10px;
-  margin: auto; /* Centrer horizontalement */
+  margin-bottom: 1rem;
 }
 
 input[type="file"] {
-  font-size: 0.9rem; /* Réduction de la taille de la police */
+  font-size: 0.9rem;
   border: none;
   align-items: center;
   display: flex;
 }
 
 button.signup {
-  padding: 0.6rem 1.5rem; /* Réduction de la taille du padding */
-  font-size: 0.9rem; /* Réduction de la taille de la police */
+  padding: 0.6rem 1.5rem;
+  font-size: 0.9rem;
   color: #fff;
   background-color: #007bff;
   border: none;

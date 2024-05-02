@@ -81,72 +81,72 @@ const Register = () => {
           <p>Welcome to Let's Talk Social Media Platform</p>
         </div>
 
-        <form onSubmit={register}>
-          <div className="form-group">
-            <input
-              type="text"
-              value={firstname}
-              onChange={(e) => setFirstname(e.target.value)}
-              placeholder="First Name"
-            />
-            <div className="error">{errors.firstName}</div>
-          </div>
+        <div>
+          <form onSubmit={register}>
+            <div className="form-group">
+              <input
+                type="text"
+                value={firstname}
+                onChange={(e) => setFirstname(e.target.value)}
+                placeholder="First Name"
+              />
+              <div className="error">{errors.firstName}</div>
+            </div>
 
-          <div className="form-group">
-            <input
-              type="text"
-              value={lastname}
-              onChange={(e) => setLastname(e.target.value)}
-              placeholder="Last Name"
-            />
-            <div className="error">{errors.lastName}</div>
-          </div>
+            <div className="form-group">
+              <input
+                type="text"
+                value={lastname}
+                onChange={(e) => setLastname(e.target.value)}
+                placeholder="Last Name"
+              />
+              <div className="error">{errors.lastName}</div>
+            </div>
 
-          <div className="form-group">
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="E-Mail"
-            />
-            <div className="error">{errors.email}</div>
-          </div>
+            <div className="form-group">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="E-Mail"
+              />
+              <div className="error">{errors.email}</div>
+            </div>
 
-          <div className="form-group">
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Password"
-            />
-            <div className="error">{errors.password}</div>
-          </div>
+            <div className="form-group">
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Password"
+              />
+              <div className="error">{errors.password}</div>
+            </div>
 
-          <div className="form-group">
-            <textarea
-              value={bio}
-              onChange={(e) => setBio(e.target.value)}
-              placeholder="Tell us about yourself"
-            ></textarea>
-            <div className="error">{errors.bio}</div>
-          </div>
+            <div className="form-group">
+              <textarea
+                value={bio}
+                onChange={(e) => setBio(e.target.value)}
+                placeholder="Tell us about yourself"
+              ></textarea>
+              <div className="error">{errors.bio}</div>
+            </div>
 
-         
+            <div className="form-group">
+              <input
+                type="date"
+                value={birthdate}
+                onChange={(e) => setBirthdate(e.target.value)}
+                placeholder="Birthdate"
+              />
+              <div className="error">{errors.birthdate}</div>
+            </div>
 
-          <div className="form-group">
-            <input
-              type="date"
-              value={birthdate}
-              onChange={(e) => setBirthdate(e.target.value)}
-              placeholder="Birthdate"
-            />
-            <div className="error">{errors.birthdate}</div>
-          </div>
-
-          <button className="btn signup" type="submit">
-            Sign Up
-          </button>
-        </form>
+            <button className="btn signup" type="submit">
+              Sign Up
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );

@@ -2,6 +2,7 @@ import "./App.css";
 
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Register from "./pages/register.js";
+import Login from "./pages/login.js";
 
 function App() {
   const router = createBrowserRouter([
@@ -11,11 +12,7 @@ function App() {
     },
     {
       path: "/login",
-      element: (
-        <div>
-          <h1>hello login</h1>
-        </div>
-      ),
+      element: <Login />,
     },
     {
       path: "/register",
