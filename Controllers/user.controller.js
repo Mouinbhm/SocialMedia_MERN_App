@@ -1,4 +1,4 @@
-const User = require("../Models/user.model");
+const user = require("../Models/user.model");
 
 exports.signup = (req, res) => {
   const data = {
@@ -10,9 +10,8 @@ exports.signup = (req, res) => {
     picture: req.body.picture,
     birthday: req.body.birthday,
   };
-  const _user = new User(data);
-  _user
-    .save()
+  const User = new user(data); // Use User instead of user
+  User.save()
     .then((createdUser) => {
       res.status(200).json({ message: "user created successfully" });
     })
