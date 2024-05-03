@@ -38,6 +38,10 @@ const Login = () => {
       try {
         const response = await UserService.signin(data);
         console.log("response ===> ", response);
+
+        localStorage.setItem("user_data", JSON.stringify(response.data.user));
+        localStorage.setItem("token", response.data.token);
+
         toast.success("User login successfully!");
 
         setEmail("");
