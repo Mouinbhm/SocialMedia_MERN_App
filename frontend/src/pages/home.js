@@ -1,26 +1,26 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
-  const [connectedUser, setConnectedUser] = useState(null); // Initialiser à null pour éviter les erreurs de rendu
-
-  const getConnectedUserData = () => {
-    const userData = localStorage.getItem("user_data");
-    if (userData) {
-      setConnectedUser(JSON.parse(userData));
-    }
-  };
+  const [connectedUser, setConnectedUser] = useState({});
+  const navigate = useNavigate();
 
   useEffect(() => {
+    const getConnectedUserData = () => {
+      const userData = localStorage.getItem("user_data");
+      if (userData === null) {
+        navigate("/login");
+      } else {
+        setConnectedUser(JSON.parse(userData));
+      }
+    };
+    
     getConnectedUserData();
-  }, []);
+  }, [navigate]);
 
   return (
     <>
-      {connectedUser ? (
-        <h1>Hello {connectedUser.firstname}</h1>
-      ) : (
-        <h1>Hello Guest</h1>
-      )}
+      <h1>Hello {connectedUser.firstname || "Guest"}</h1>
     </>
   );
 };
