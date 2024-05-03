@@ -1,20 +1,17 @@
 import React, { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import UserService from "../services/user.service";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    password: "",
-    bio: "",
-    birthdate: "",
+    email: "", // Modifier ici
+    password: "", // Modifier ici
   });
 
   const formValidation = () => {
-    let localErrors = { ...errors };
+    let localErrors = { email: "", password: "" }; // Réinitialiser les erreurs à chaque validation
 
     if (!email) {
       localErrors.email = "Email is required";
@@ -27,8 +24,33 @@ const Login = () => {
     setErrors(localErrors);
     return Object.values(localErrors).every((error) => error === "");
   };
+
+  const signin = async (e) => {
+    e.preventDefault();
+    console.log("form submitted");
+    if (formValidation()) {
+      const data = {
+        email: email,
+        password: password,
+      };
+      try {
+        const response = await UserService.signin(data);
+        console.log("response ===> ", response);
+        toast.success("User login successfully!");
+
+        setEmail("");
+        setPassword("");
+      } catch (err) {
+        console.log(err);
+        toast.error(err.response.data.message);
+      }
+    } else {
+      console.log("form invalid");
+    }
+  };
+
   return (
-    <div className="register">
+    <div className="login">
       <Toaster />
       <div className="login-cover"></div>
 
@@ -39,7 +61,7 @@ const Login = () => {
         </div>
 
         <div>
-          <form>
+          <form onSubmit={signin}>
             <div className="form-group">
               <input
                 type="email"
@@ -47,7 +69,8 @@ const Login = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="E-Mail"
               />
-              <div className="error">{errors.email}</div>
+              <div className="error">{errors.email}</div>{" "}
+             
             </div>
 
             <div className="form-group">
@@ -57,8 +80,12 @@ const Login = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Password"
               />
-              <div className="error">{errors.password}</div>
+              <div className="error">{errors.password}</div>{" "}
+            
             </div>
+            <button className="btn signup" type="submit">
+              Sign IN
+            </button>
           </form>
         </div>
       </div>

@@ -98,7 +98,8 @@ button.signup:hover {
 .error {
   color: #fe7621;
   font-size: 0.9rem;
-  margin-top: 0.2rem;
+  margin-top: -0.5rem;
+  margin-bottom: 0.5rem;
   display: flex;
   align-items: center;
 }

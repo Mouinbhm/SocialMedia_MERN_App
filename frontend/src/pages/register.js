@@ -20,7 +20,14 @@ const Register = () => {
   });
 
   const formValidation = () => {
-    let localErrors = { ...errors };
+    let localErrors = {
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: "",
+      bio: "",
+      birthdate: "",
+    };
 
     if (!firstname) {
       localErrors.firstName = "Firstname is required";
@@ -35,6 +42,9 @@ const Register = () => {
     }
     if (!password || password.length < 8) {
       localErrors.password = "Password is required (min 8 characters)";
+    }
+    if (!birthdate) {
+      localErrors.birthdate = "Birthdate is required";
     }
     setErrors(localErrors);
     return Object.values(localErrors).every((error) => error === "");
@@ -124,15 +134,6 @@ const Register = () => {
             </div>
 
             <div className="form-group">
-              <textarea
-                value={bio}
-                onChange={(e) => setBio(e.target.value)}
-                placeholder="Tell us about yourself"
-              ></textarea>
-              <div className="error">{errors.bio}</div>
-            </div>
-
-            <div className="form-group">
               <input
                 type="date"
                 value={birthdate}
@@ -140,6 +141,15 @@ const Register = () => {
                 placeholder="Birthdate"
               />
               <div className="error">{errors.birthdate}</div>
+            </div>
+
+            <div className="form-group">
+              <textarea
+                value={bio}
+                onChange={(e) => setBio(e.target.value)}
+                placeholder="Tell us about yourself"
+              ></textarea>
+              <div className="error">{errors.bio}</div>
             </div>
 
             <button className="btn signup" type="submit">
