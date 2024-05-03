@@ -112,12 +112,8 @@ button.signup:hover {
   font-weight: bold;
 }
 
-
-
-/* app.css */
-
 /* Style pour le corps de la page */
-body {
+.not-container body {
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
   margin: 0;
@@ -129,19 +125,19 @@ body {
 }
 
 /* Style pour le conteneur de la page */
-.container {
+.not-container {
   text-align: center;
 }
 
 /* Style pour le titre h1 */
-h1 {
+.not-container h1,h2 {
   font-size: 8rem;
   color: #333;
   margin-bottom: 20px;
 }
 
 /* Style pour le paragraphe p */
-p {
+.not-container p {
   font-size: 1.5rem;
   color: #555;
 }
