@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import UserService from "../services/user.service";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({
@@ -40,6 +42,9 @@ const Login = () => {
 
         setEmail("");
         setPassword("");
+
+        //Redirection
+        navigate("/home");
       } catch (err) {
         console.log(err);
         toast.error(err.response.data.message);
@@ -70,7 +75,6 @@ const Login = () => {
                 placeholder="E-Mail"
               />
               <div className="error">{errors.email}</div>{" "}
-             
             </div>
 
             <div className="form-group">
@@ -81,7 +85,6 @@ const Login = () => {
                 placeholder="Password"
               />
               <div className="error">{errors.password}</div>{" "}
-            
             </div>
             <button className="btn signup" type="submit">
               Sign IN
