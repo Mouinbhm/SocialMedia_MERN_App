@@ -1,0 +1,45 @@
+.sidebar {
+  margin: 20px 30px;
+}
+
+.sidebar_menu {
+  box-shadow: 0 1px 6px -4px #59545e;
+  display: flex;
+  flex-direction: column;
+  width: 210px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.sidebar_menu a {
+  color: #4f657d;
+  border-color: transparent;
+  cursor: pointer;
+  padding: 15px 33px;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  transition: all 1s;
+}
+
+.sidebar_menu a:hover,
+.sidebar_menu a.active {
+  border-left: 4px solid #1877f2;
+  background-color: rgb(233, 235, 237);
+  color: #1877f2;
+}
+
+.me-3 {
+  margin-right: 15px;
+  transition: all 1s;
+  color: #b1b3b4;
+}
+
+.sidebar_menu a b {
+  font-weight: 700;
+}
+
+.sidebar_menu a:hover .me-3,
+.sidebar_menu a.active .me-3 {
+  color: #1877f2;
+}

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "./Components/navbar";
 import Usernamecard from "./Components/UsernameCard";
-
+import Sidebar from "./Components/sidebar";
 const Home = () => {
   const [connectedUser, setConnectedUser] = useState({});
   const navigate = useNavigate();
@@ -24,7 +24,8 @@ const Home = () => {
     <>
       <Navbar />
 
-      <Usernamecard user={connectedUser}/>
+      <Usernamecard user={connectedUser} />
+      <Sidebar />
       {/*<h1>Hello {connectedUser.firstname || "Guest"}</h1>*/}
     </>
   );
