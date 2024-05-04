@@ -24,7 +24,7 @@ const Home = () => {
     <>
       <Navbar />
 
-      <Usernamecard />
+      <Usernamecard user={connectedUser}/>
       {/*<h1>Hello {connectedUser.firstname || "Guest"}</h1>*/}
     </>
   );

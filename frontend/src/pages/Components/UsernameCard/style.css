@@ -10,28 +10,38 @@
   gap: 5px;
 }
 
-
-
-.username_card_image{
-    overflow: hidden;
-    width: 40px;
-    height: 40px;
+.username_card_image {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  width: 40px;
+  height: 40px;
 }
 
-
-.username_card_image img{
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
+.username_card_image img {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
 }
 
-h3.username{
-    font-size: 14px;
-    margin: 0;
+h3.username {
+  font-size: 14px;
+  margin: 0;
 }
 
-span.small{
-    margin: 0%;
-    font-size: 12px;
+span.small {
+  margin: 0%;
+  font-size: 12px;
+}
+.profile_caracter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgb(255, 0, 0);
+  color: azure;
 }
