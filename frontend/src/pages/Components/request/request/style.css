@@ -1,0 +1,52 @@
+.request {
+  box-shadow: 0 1px 6px -4px #54595c;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.request_details {
+  display: flex;
+  align-items: center;
+  padding-top: 4px;
+}
+.request_details p {
+  font-size: 12px;
+}
+
+.request_answers {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.request_answers button {
+  cursor: pointer;
+  width: 48%;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 10px;
+}
+.accept_button {
+  background-color: #1877f2;
+  color: white;
+}
+
+.accept_button:hover {
+  border: 1px solid #056bf1;
+}
+.decline_button {
+  border: 1px solid #1877f2 !important;
+  background-color: white;
+  color: #1877f2;
+}
+
+.request .user_image {
+  object-fit: cover;
+  width: 45px;
+  height: 40px;
+  border-radius: 8px;
+  margin-right: 10px;
+}
