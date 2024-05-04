@@ -34,14 +34,13 @@
   outline: none;
   margin-top: 12px;
   margin-right: 80px;
-  
 }
 
 .search-icon {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  right: 100px; /* Ajustement de la position de l'icône */
+  right: 100px;
   color: #666;
 }
 
@@ -55,11 +54,7 @@
   margin-right: 20px;
 }
 
-.navbar_profile_button:hover {
-  background-color: #0056b3;
-}
-
-.navbar_profile_image  {
+.navbar_profile_image {
   width: 30px;
   height: 30px;
   background-color: orangered;
@@ -67,6 +62,16 @@
   margin-right: 10px;
 }
 
-.navbar_profile_image img{
-    width:100% ;
+.navbar_profile_image img {
+  width: 100%;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
 }

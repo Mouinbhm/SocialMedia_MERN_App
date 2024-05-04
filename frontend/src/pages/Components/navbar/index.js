@@ -7,7 +7,10 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <div className="navbar_left">
-        <b>Let's Talk</b>
+        <div className="logo-container">
+          <img src="logo.png"alt="Logo" className="logo" />
+          <b>Let's Talk</b>
+        </div>
       </div>
       <div className="navbar_right">
         <div className="navbar_profile_search">
@@ -17,10 +20,8 @@ const Navbar = () => {
         <button className="navbar_profile_button">
           <FontAwesomeIcon icon={faCirclePlus} /> Create
         </button>
-
-        
         <div className="navbar_profile_image">
-          <img src=""  />
+          <img src="" />
         </div>
       </div>
     </div>
