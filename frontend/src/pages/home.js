@@ -4,6 +4,7 @@ import Navbar from "./Components/navbar";
 import Usernamecard from "./Components/UsernameCard";
 import Sidebar from "./Components/sidebar";
 import Stories from "./Components/Stories";
+import Request from "./Components/request";
 
 const Home = () => {
   const [connectedUser, setConnectedUser] = useState({});
@@ -33,7 +34,7 @@ const Home = () => {
         <div style={{ width: "50%" }}>
           <Stories />
         </div>
-        <div style={{ width: "25%" }}>right box</div>
+        <div style={{ width: "25%" }}><Request/></div>
       </div>
 
       {/*<h1>Hello {connectedUser.firstname || "Guest"}</h1>*/}
