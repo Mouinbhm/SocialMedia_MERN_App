@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "./Components/navbar";
 import Usernamecard from "./Components/UsernameCard";
 import Sidebar from "./Components/sidebar";
+import Stories from "./Components/Stories";
+
 const Home = () => {
   const [connectedUser, setConnectedUser] = useState({});
   const navigate = useNavigate();
@@ -23,9 +25,17 @@ const Home = () => {
   return (
     <>
       <Navbar />
+      <div className="layout-app">
+        <div style={{ width: "25%" }}>
+          <Usernamecard user={connectedUser} />
+          <Sidebar />
+        </div>
+        <div style={{ width: "50%" }}>
+          <Stories />
+        </div>
+        <div style={{ width: "25%" }}>right box</div>
+      </div>
 
-      <Usernamecard user={connectedUser} />
-      <Sidebar />
       {/*<h1>Hello {connectedUser.firstname || "Guest"}</h1>*/}
     </>
   );

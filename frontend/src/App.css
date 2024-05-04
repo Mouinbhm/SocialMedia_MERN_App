@@ -141,3 +141,6 @@ button.signup:hover {
   font-size: 1.5rem;
   color: #555;
 }
+.layout-app{
+  display: flex;
+}
