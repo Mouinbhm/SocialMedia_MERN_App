@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "./Components/navbar";
+import Usernamecard from "./Components/UsernameCard";
 
 const Home = () => {
   const [connectedUser, setConnectedUser] = useState({});
@@ -15,17 +16,16 @@ const Home = () => {
         setConnectedUser(JSON.parse(userData));
       }
     };
-    
+
     getConnectedUserData();
   }, [navigate]);
 
   return (
     <>
+      <Navbar />
 
-    <Navbar>
-      
-    </Navbar>
-      <h1>Hello {connectedUser.firstname || "Guest"}</h1>
+      <Usernamecard />
+      {/*<h1>Hello {connectedUser.firstname || "Guest"}</h1>*/}
     </>
   );
 };

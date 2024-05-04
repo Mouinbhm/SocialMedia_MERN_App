@@ -60,6 +60,7 @@
   background-color: orangered;
   border-radius: 6px;
   margin-right: 10px;
+  overflow: hidden;
 }
 
 .navbar_profile_image img {
